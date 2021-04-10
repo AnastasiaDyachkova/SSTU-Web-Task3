@@ -2,7 +2,7 @@ function filter(){
     document.querySelectorAll(".card-movie").forEach(e => e.remove());
     
     let country = document.getElementById("iCountryFilter").value;
-    let genre = document.getElementById("iGenreFilter").value;
+    let genres = document.getElementById("iGenreFilter").value;
     let year = document.getElementById("iYearFilter").value;
     
     //Получаю коллекцию фильмов из LS
@@ -11,13 +11,13 @@ function filter(){
     //Отрисовываю из LS карточки тех фильмов, которые соответствуют параметрам
     if(allMoviesInLS!=null){
 
-        if(country != "Любая" & genre != "Любой" & year != "Любой") {
+        if(country != "Любая" & genres != "Любой" & year != "Любой") {
             for(let i=0; i<allMoviesInLS.length; i++){
                 if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre & allMoviesInLS[i].yearF == year) addMovieOnPage(allMoviesInLS[i]);
             }
         }
 
-        if(country != "Любая" & genre != "Любой" & year == "Любой") {
+        if(country != "Любая" & genres != "Любой" & year == "Любой") {
             for(let i=0; i<allMoviesInLS.length; i++){
                 if(allMoviesInLS[i].country == country & allMoviesInLS[i].genre == genre) addMovieOnPage(allMoviesInLS[i]);
             }
