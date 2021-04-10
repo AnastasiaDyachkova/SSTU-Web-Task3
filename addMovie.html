@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Сервис любителей фильмов</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="header_container">
+				<a href="index.html">Все фильмы</a>
+				<a href="addMovie.html">Добавить фильм</a>
+			</div>
+		</header>
+		<main>
+			<div class="main-container">
+				<form id="formMovie">
+					<label class="label-text">Название фильма
+						<input id="title" type="text" placeholder="Название">
+					</label>
+					<label class="label-text">Страна
+						<select id="country">
+							<option value = "Аргентина">Аргентина</option>
+							<option value = "Армения">Армения</option>
+							<option value = "Белоруссия">Белоруссия</option>
+							<option value = "Бельгия">Бельгия</option>
+							<option value = "Болгария">Болгария</option>
+							<option value = "Ботсвана">Ботсвана</option>
+							<option value = "Бразилия">Бразилия</option>
+							<option value = "Великобритания">Великобритания</option>
+							<option value = "Венгрия">Венгрия</option>
+							<option value = "Венесуэла">Венесуэла</option>
+							<option value = "Германия">Германия</option>
+							<option value = "Греция">Греция</option>
+							<option value = "Грузия">Грузия</option>
+							<option value = "Дания">Дания</option>
+							<option value = "Египет">Египет</option>
+							<option value = "Израиль">Израиль</option>
+							<option value = "Индия">Индия</option>
+							<option value = "Индонезия">Индонезия</option>
+							<option value = "Иран">Иран</option>
+							<option value = "Ирландия">Ирландия</option>
+							<option value = "Исландия">Исландия</option>
+							<option value = "Испания">Испания</option>
+							<option value = "Италия">Италия</option>
+							<option value = "Казахстан">Казахстан</option>
+							<option value = "Канада">Канада</option>
+							<option value = "Кения">Кения</option>
+							<option value = "Китай">Китай</option>
+							<option value = "Колумбия">Колумбия</option>
+							<option value = "Куба">Куба</option>
+							<option value = "Латвия">Латвия</option>
+							<option value = "Литва">Литва</option>
+							<option value = "Люксембург">Люксембург</option>
+							<option value = "Мексика">Мексика</option>
+							<option value = "Молдавия">Молдавия</option>
+							<option value = "Монако">Монако</option>
+							<option value = "Монголия">Монголия</option>
+							<option value = "Нидерланды">Нидерланды</option>
+							<option value = "Новая Зеландия">Новая Зеландия</option>
+							<option value = "Норвегия">Норвегия</option>
+							<option value = "Парагвай">Парагвай</option>
+							<option value = "Польша">Польша</option>
+							<option value = "Португалия">Португалия</option>
+							<option value = "Россия">Россия</option>
+							<option value = "Румыния">Румыния</option>
+							<option value = "Сербия">Сербия</option>
+							<option value = "Сингапур">Сингапур</option>
+							<option value = "Словакия">Словакия</option>
+							<option value = "Словения">Словения</option>
+							<option value = "СССР">СССР</option>
+							<option value = "США">США</option>
+							<option value = "Таджикистан">Таджикистан</option>
+							<option value = "Турция">Турция</option>
+							<option value = "Украина">Украина</option>
+							<option value = "Финляндия">Финляндия</option>
+							<option value = "Франция">Франция</option>
+							<option value = "Хорватия">Хорватия</option>
+							<option value = "Чехия">Чехия</option>
+							<option value = "Швейцария">Швейцария</option>
+							<option value = "Швеция">Швеция</option>
+							<option value = "Шотландия">Шотландия</option>
+							<option value = "Эстония">Эстония</option>
+							<option value = "ЮАР">ЮАР</option>
+							<option value = "Япония">Япония</option>
+						</select>
+					</label>
+					<label class="label-text"> Жанр
+						<select id="genres">
+							<option value = "Боевик">Боевик</option>
+	                        <option value = "Вестерн">Вестерн</option>
+	                        <option value = "Гангстерский фильм">Гангстерский фильм</option>
+	                        <option value = "Детектив">Детектив</option>
+	                        <option value = "Драма">Драма</option>
+	                        <option value = "Исторический фильм">Исторический фильм</option>
+	                        <option value = "Комедия">Комедия</option>
+	                        <option value = "Мелодрама">Мелодрама</option>
+	                        <option value = "Музыкальный фильм">Музыкальный фильм</option>
+	                        <option value = "Нуар">Нуар</option>
+	                        <option value = "Политический фильм">Политический фильм</option>
+	                        <option value = "Документальный фильм">Документальный фильм</option>
+	                        <option value = "Приключенческий фильм">Приключенческий фильм</option>
+	                        <option value = "Сказка">Сказка</option>
+	                        <option value = "Трагедия">Трагедия</option>
+	                        <option value = "Трагикомедия">Трагикомедия</option>
+	                        <option value = "Триллер">Триллер</option>
+	                        <option value = "Фантастический фильм">Фантастический фильм</option>
+	                        <option value = "Фильм ужасов">Фильм ужасов</option>
+							<option value = "Фильм-катастрофа">Фильм-катастрофа</option>
+						</select>
+					</label>
+					<label class="label-text">Режиссёр
+						<input id="filmDirector1" type="text" placeholder="Режиссер">
+						<input id="filmDirector2" type="text" placeholder="...">
+						<input id="filmDirector3" type="text" placeholder="...">
+					</label>
+					<label class="label-text">Сценарий
+						<input id="scenario" type="text" placeholder="Сценарий">
+					</label>
+					<label class="label-text">Продюсер
+						<input id="producer" type="text" placeholder="Продюсер">
+					</label>
+					<label class="label-text">Оператор
+						<input id="operator" type="text" placeholder="Оператор">
+					</label class="label-text">
+					<label class="label-text">Композитор
+						<input id="composer" type="text" placeholder="Композитор">
+					</label>
+					<label class="label-text">Бюджет
+						<input id="budget" type="number" min="0" step="1" placeholder="Бюджет">
+						<select id="budgetCurrency">
+							<option value="$">$</option>
+							<option value="€">€</option>
+							<option value="₽">₽</option>
+						</select>
+					</label>
+					<label class="label-text">Мировые сборы
+						<input id="worldFees" type="number" min="0" step="1" placeholder="Мировые сборы">
+						<select id="worldFeesCurrency">
+							<option value="$">$</option>
+							<option value="€">€</option>
+							<option value="₽">₽</option>
+						</select>
+					</label>
+					<label class="label-text">Возрастной рейтинг
+						<select id="age">
+							<option value="0+">0+</option>
+							<option value="6+">6+</option>
+							<option value="12+">12+</option>
+							<option value="18+">18+</option>
+						</select>
+					</label>
+					<label class="label-text">Длительность
+						<input id="hours" type="number" min="0" step="1" placeholder="ЧЧ">
+						<input id="minutes" type="number" min="0" step="1" max="59" placeholder="ММ">
+						<input id="seconds" type="number" min="0" step="1" max="59" placeholder="СС">
+					</label>
+					<label class="label-text">Дата выхода
+						<input id="day" type="number" min="1" step="1" max="31" placeholder="ДД">
+						<input id="month" type="number" min="1" step="1" max="12" placeholder="ММ">
+						<input id="year" type="number" min="1900" step="1" max="2021" placeholder="ГГ">
+					</label>
+					<label class="label-text">Постер
+						<input type="text" id="photo" placeholder="Вставьте ссылку на фото">
+					</label>
+
+					<button type="submit">Добавить</button>
+					<button type="reset">Очистить</button>
+					<div id="message"></div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<div class="footer">
+				<p>Вы можете связаться с нами по этой почте: dnastaa@gmail.com</p>
+				<p>Copyright 2021. All rights reserved. </p>
+			</div>
+		</footer> 
+		<script src="scripts/create.js"></script>
+	</body>
+
+</html>
