@@ -361,15 +361,10 @@ function addMovieOnPage(movie){
 
 
 
-    //-----------------------------------------------------
+    //------------------DELETE MOVIE-----------------------------------
     let buttonAddMoviePersCol = document.createElement('input');
     buttonAddMoviePersCol.type = "button";
     buttonAddMoviePersCol.value = "Удалить фильм";
-
-    
-    
- 
-
 
 
     buttonAddMoviePersCol.onclick = function deleteMovie(){
