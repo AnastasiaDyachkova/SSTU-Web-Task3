@@ -72,10 +72,11 @@ function addMovieOnPage(movie){
 
     let cardMovie = document.createElement('div');
     cardMovie.setAttribute("class", "card-movie");
+    cardMovie.id = "card-movie";
 
     let movieTitle = document.createElement('p');
     movieTitle.setAttribute("class", "movie-title");
-    movieTitle.textContent = movie.titleMovie;
+    movieTitle.textContent = movie.title;
 
     let cardMovieRow = document.createElement('div');
     cardMovieRow.setAttribute("class", "card-movie__row");
@@ -83,6 +84,7 @@ function addMovieOnPage(movie){
     let movieInform = document.createElement('div');
     movieInform.setAttribute("class", "movie-inform");
 
+    let id = movie.id;
 
     // IMG -------------------------------------
     let movieImg = document.createElement('div');
@@ -385,7 +387,123 @@ function addMovieOnPage(movie){
             }
         }
     }
+   //--------------------------------------------------------
+   let buttonAddMovieComment = document.createElement('input');
+    buttonAddMovieComment.type = "button";
+    buttonAddMovieComment.value = "Добавить отзыв";
 
+    buttonAddMovieComment.onclick = function addComment(){
+
+        let commentBlock = document.createElement('div');
+        commentBlock.setAttribute("class", "comment-block");
+
+        cardMovie.appendChild(commentBlock);
+
+        let commentTitleMovie = document.createElement('p');
+        commentTitleMovie.setAttribute("class", "comment-title-movie");
+        commentTitleMovie.textContent = "Добавление отзыва";
+
+        let commentInputName = document.createElement('input');
+        commentInputName.setAttribute("class", "comment-input-name");
+        commentInputName.placeholder = "Имя";
+        commentInputName.id = "commentInputName";
+
+        let commentInputJob = document.createElement('input');
+        commentInputJob.setAttribute("class", "comment-input-name");
+        commentInputJob.placeholder = "Род деятельности";
+        commentInputJob.id = "commentInputJob";
+
+        let commentText = document.createElement('textarea');
+        commentText.setAttribute("class", "comment-textarea");
+        commentText.placeholder = "Ваш отзыв";
+        commentText.id = "commentText";
+
+        let commentSelectGrade = document.createElement('select');
+        commentSelectGrade.id = "iGrade";
+
+        let commentOptionGrade1 = document.createElement('option');
+        commentOptionGrade1.value = 1;
+        commentOptionGrade1.textContent = 1;
+        let commentOptionGrade2 = document.createElement('option');
+        commentOptionGrade2.value = 2;
+        commentOptionGrade2.textContent = 2;
+        let commentOptionGrade3 = document.createElement('option');
+        commentOptionGrade3.value = 3;
+        commentOptionGrade3.textContent = 3;
+        let commentOptionGrade4 = document.createElement('option');
+        commentOptionGrade4.value = 4;
+        commentOptionGrade4.textContent = 4;
+        let commentOptionGrade5 = document.createElement('option');
+        commentOptionGrade5.value = 5;
+        commentOptionGrade5.textContent = 5;
+
+        commentSelectGrade.setAttribute("class", "comment-select-grade");
+
+        commentSelectGrade.appendChild(commentOptionGrade1);
+        commentSelectGrade.appendChild(commentOptionGrade2);
+        commentSelectGrade.appendChild(commentOptionGrade3);
+        commentSelectGrade.appendChild(commentOptionGrade4);
+        commentSelectGrade.appendChild(commentOptionGrade5);
+
+        let commentButtonReady = document.createElement('input');
+        commentButtonReady.type = "button";
+        commentButtonReady.value = "Добавить отзыв";
+        commentButtonReady.id = "comment-button";
+
+        let commentButtonReset = document.createElement('input');
+        commentButtonReset.type = "button";
+        commentButtonReset.value = "Отмена";
+        commentButtonReset.id = "comment-button-reset";
+
+        commentButtonReset.onclick = function commentReset(){
+            cardMovie.removeChild(commentBlock);
+        }
+
+        commentButtonReady.onclick = function addComment(){
+            let commentCollection = [];
+            class Comment{
+                constructor(){
+                    this.commentId = Math.random().toString(36).substr(2,8);
+                    this.movieId = id;
+                    if(document.getElementById("commentInputName").value.trim()=="") this.name = "Аноним";
+                    else this.name = document.getElementById("commentInputName").value.trim();
+
+                    if(document.getElementById("commentInputJob").value.trim()=="") this.job = "безработный";
+                    else this.job = document.getElementById("commentInputJob").value.trim();
+
+                    this.text = document.getElementById("commentText").value.trim();
+                    this.grade = document.getElementById("iGrade").value;
+                }
+            }
+
+            let comment = new Comment();
+
+            if(JSON.parse(localStorage.getItem('commentCollection')) != null){
+                commentCollection = JSON.parse(localStorage.getItem('commentCollection'));
+            }
+            commentCollection.push(comment);
+            localStorage.setItem('commentCollection', JSON.stringify(commentCollection));
+
+            cardMovie.removeChild(commentBlock);
+        }
+        
+        commentBlock.appendChild(commentTitleMovie);
+        commentBlock.appendChild(commentInputName);
+        commentBlock.appendChild(commentInputJob);
+        commentBlock.appendChild(commentText);
+        commentBlock.appendChild(commentSelectGrade);
+        commentBlock.appendChild(commentButtonReady);
+        commentBlock.appendChild(commentButtonReset);
+    } 
+
+    //--------------------------------------------------------
+    let buttonShowComments = document.createElement('input');
+    buttonShowComments.type = "button";
+    buttonShowComments.value = "Посмотреть отзывы";
+
+    buttonShowComments.onclick = function addComment(){
+        addCommentsOnPage(movie);
+    } 
 
     //--------------------------------------------------------
 
@@ -411,7 +529,9 @@ function addMovieOnPage(movie){
     cardMovie.appendChild(movieTitle);
     cardMovie.appendChild(cardMovieRow);
     cardMovie.appendChild(buttonAddMoviePersCol);
-
+    cardMovie.appendChild(buttonAddMoviePersCol);
+    cardMovie.appendChild(buttonAddMovieComment);
+    cardMovie.appendChild(buttonShowComments);
     
     containerMain.appendChild(cardMovie);
 }
