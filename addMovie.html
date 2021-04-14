@@ -19,7 +19,7 @@
 			<div class="main-container">
 				<form id="formMovie">
 					<label class="label-text">Название фильма
-						<input id="title" type="text" placeholder="Название">
+						<input id="title" type="text" placeholder="Название" required>
 					</label>
 					<label class="label-text">Страна
 						<select id="country">
@@ -118,19 +118,19 @@
 						<input id="filmDirector3" type="text" placeholder="...">
 					</label>
 					<label class="label-text">Сценарий
-						<input id="scenario" type="text" placeholder="Сценарий">
+						<input id="scenario" type="text" placeholder="Сценарий" required> 
 					</label>
 					<label class="label-text">Продюсер
-						<input id="producer" type="text" placeholder="Продюсер">
+						<input id="producer" type="text" placeholder="Продюсер" required>
 					</label>
 					<label class="label-text">Оператор
-						<input id="operator" type="text" placeholder="Оператор">
+						<input id="operator" type="text" placeholder="Оператор" required>
 					</label class="label-text">
 					<label class="label-text">Композитор
-						<input id="composer" type="text" placeholder="Композитор">
+						<input id="composer" type="text" placeholder="Композитор" required>
 					</label>
 					<label class="label-text">Бюджет
-						<input id="budget" type="number" min="0" step="1" placeholder="Бюджет">
+						<input id="budget" type="number" min="0" step="1" placeholder="Бюджет" required>
 						<select id="budgetCurrency">
 							<option value="$">$</option>
 							<option value="€">€</option>
@@ -138,7 +138,7 @@
 						</select>
 					</label>
 					<label class="label-text">Мировые сборы
-						<input id="worldFees" type="number" min="0" step="1" placeholder="Мировые сборы">
+						<input id="worldFees" type="number" min="0" step="1" placeholder="Мировые сборы" required>
 						<select id="worldFeesCurrency">
 							<option value="$">$</option>
 							<option value="€">€</option>
@@ -154,17 +154,17 @@
 						</select>
 					</label>
 					<label class="label-text">Длительность
-						<input id="hours" type="number" min="0" step="1" placeholder="ЧЧ">
-						<input id="minutes" type="number" min="0" step="1" max="59" placeholder="ММ">
-						<input id="seconds" type="number" min="0" step="1" max="59" placeholder="СС">
+						<input id="hours" type="number" min="0" step="1" placeholder="ЧЧ" required>
+						<input id="minutes" type="number" min="0" step="1" max="59" placeholder="ММ" required>
+						<input id="seconds" type="number" min="0" step="1" max="59" placeholder="СС" >
 					</label>
 					<label class="label-text">Дата выхода
-						<input id="day" type="number" min="1" step="1" max="31" placeholder="ДД">
-						<input id="month" type="number" min="1" step="1" max="12" placeholder="ММ">
-						<input id="year" type="number" min="1900" step="1" max="2021" placeholder="ГГ">
+						<input id="day" type="number" min="1" step="1" max="31" placeholder="ДД" required>
+						<input id="month" type="number" min="1" step="1" max="12" placeholder="ММ" required>
+						<input id="year" type="number" min="1900" step="1" max="2021" placeholder="ГГ" required>
 					</label>
 					<label class="label-text">Постер
-						<input type="text" id="photo" placeholder="Вставьте ссылку на фото">
+						<input type="text" id="photo" placeholder="Вставьте ссылку на фото" required>
 					</label>
 
 					<button type="submit">Добавить</button>
