@@ -358,6 +358,21 @@ function addMovieOnPage(movie){
 
     movieInformRowDate.appendChild(movieParamDate);
     movieInformRowDate.appendChild(movieDescriptionDate);
+    // //-------------------------------------------------------
+    // let movieInformTelephone = document.createElement('div');
+    // movieInformTelephone.setAttribute("class", "movie-inform__row");
+
+    // let movieParamTelephone = document.createElement('pre');
+    // movieParamTelephone.setAttribute("class", "movie-param");
+    // movieParamTelephone.textContent = "Номер: ";
+
+    // let movieDescriptionTelephone = document.createElement('p');
+    // movieDescriptionTelephone.setAttribute("class", "movie-description");
+    // movieDescriptionTelephone.textContent = movie.telephone;
+
+    // movieInformTelephone.appendChild(movieParamTelephone);
+    // movieInformTelephone.appendChild(movieDescriptionTelephone); 
+
 
 
 
@@ -515,6 +530,8 @@ function addMovieOnPage(movie){
     movieInform.appendChild(movieInformRowAge);
     movieInform.appendChild(movieInformRowTime);
     movieInform.appendChild(movieInformRowDate);
+    //movieInform.appendChild(movieInformTelephone);
+
 
 
     cardMovieRow.appendChild(movieInform);

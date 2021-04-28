@@ -28,6 +28,7 @@ class Movie{
 		document.getElementById("day").value.trim()),
 		this.photo = document.getElementById("photo").value.trim(),
 		this.year = document.getElementById("year").value.trim()
+        //this.telephone = document.getElementById("telephone").value.trim()
 	}
 }
 
